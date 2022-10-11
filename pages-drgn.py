@@ -34,8 +34,14 @@ def main():
             mycnt.cntadd('err')
             continue
 
+        if page._count.counter:
+            mycnt.cntadd('cnt')
+
         for flag in flags.split('|'):
             mycnt.cntadd(flag)
+
+            if flag == '0' and page._count.counter:
+                mycnt.cntadd('0cnt')
 
     for key in mycnt:
         print(f'{key} = {pages_tos(mycnt[key])}')
