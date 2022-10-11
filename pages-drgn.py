@@ -32,8 +32,6 @@ def main():
             flags = decode_page_flags(page)
         except:
             mycnt.cntadd('err')
-
-        if not flags:
             continue
 
         for flag in flags.split('|'):
